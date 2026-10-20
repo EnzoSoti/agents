@@ -1,0 +1,33 @@
+{
+  "name": "@enzosoti/agents",
+  "version": "1.0.0",
+  "description": "Installable AI agent skills and configurations into your project codebase",
+  "main": "bin/install.js",
+  "bin": {
+    "agents": "bin/install.js",
+    "install-agents": "bin/install.js"
+  },
+  "scripts": {
+    "postinstall": "node bin/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnzoSoti/agents.git"
+  },
+  "keywords": [
+    "agents",
+    "skills",
+    "ai",
+    "antigravity",
+    "copilot",
+    "claude",
+    "cursor"
+  ],
+  "author": "EnzoSoti",
+  "license": "MIT",
+  "files": [
+    ".agents",
+    "bin",
+    "README.md"
+  ]
+}

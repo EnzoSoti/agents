@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06T05:38:01.910Z",
+  "entries": [
+    "api-endpoint-builder",
+    "bug-hunter",
+    "codebase-audit-pre-push",
+    "diagnosing-bugs",
+    "five-axis-code-review",
+    "improve-codebase-architecture",
+    "performance-optimizer",
+    "poka-yoke",
+    "prototype",
+    "tdd",
+    "technical-change-tracker"
+  ]
+}
