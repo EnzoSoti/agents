@@ -8,7 +8,8 @@
     "install-agents": "bin/install.js"
   },
   "scripts": {
-    "postinstall": "node bin/install.js"
+    "postinstall": "node bin/install.js",
+    "docs": "python scripts/generate_docs.py"
   },
   "repository": {
     "type": "git",
