@@ -1,17 +1,26 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T05:38:01.910Z",
+  "updatedAt": "2026-10-20T14:57:00.000Z",
   "entries": [
     "api-endpoint-builder",
+    "banner-design",
+    "brand",
     "bug-hunter",
     "codebase-audit-pre-push",
+    "design",
+    "design-system",
     "diagnosing-bugs",
+    "fct-app-v4",
     "five-axis-code-review",
     "improve-codebase-architecture",
     "performance-optimizer",
     "poka-yoke",
     "prototype",
+    "slides",
     "tdd",
-    "technical-change-tracker"
+    "technical-change-tracker",
+    "ui-styling",
+    "ui-ux-pro-max",
+    "universal-dev-orchestrator"
   ]
 }

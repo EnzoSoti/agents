@@ -1,0 +1,44 @@
+name: CI and Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate CLI syntax
+        run: |
+          node -c bin/install.js
+
+      - name: Test CLI Commands
+        run: |
+          node bin/install.js help
+          node bin/install.js list
+
+      - name: Validate Antigravity Manifest
+        run: |
+          node -e "
+            const manifest = require('./.agents/skills/.antigravity-install-manifest.json');
+            const fs = require('fs');
+            const skills = fs.readdirSync('./.agents/skills', { withFileTypes: true })
+              .filter(d => d.isDirectory())
+              .map(d => d.name);
+            console.log('Manifest entries:', manifest.entries.length);
+            console.log('Actual directories:', skills.length);
+            if (manifest.entries.length !== skills.length) {
+              console.warn('Warning: Manifest count differs from folder count');
+            }
+          "

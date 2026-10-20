@@ -78,10 +78,39 @@ npm install @enzosoti/agents --save-dev
 You can also run it via binary command:
 
 ```bash
-npx agents
-# or
-npx install-agents
+npx agents [command]
 ```
+
+### CLI Commands & Selective Installation
+
+You can use `npx agents` to manage, inspect, or selectively install skills:
+
+```bash
+# List all 20 available skills
+npx agents list
+
+# Install specific skill(s) only
+npx agents add tdd bug-hunter
+npx agents add ui-ux-pro-max ui-styling
+
+# Install or sync all skills
+npx agents install --all
+
+# Generate IDE pointer files (.cursorrules, CLAUDE.md)
+npx agents link
+npx agents link --cursor
+npx agents link --claude
+
+# Force overwrite existing files if modified
+npx agents install --force
+```
+
+---
+
+## Safety & Non-Destructive Merging
+
+- **Safe postinstall**: Automatic `npm install` respects existing project files and does not overwrite modifications unless `--force` is passed.
+- **Root detection**: Accurately locates host project root via `INIT_CWD` and nested `node_modules` inspection.
 
 ---
 
