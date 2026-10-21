@@ -29,6 +29,8 @@
   "files": [
     ".agents",
     "bin",
-    "README.md"
+    "README.md",
+    "AGENTS.md",
+    "docs"
   ]
 }

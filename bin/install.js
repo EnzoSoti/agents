@@ -153,7 +153,7 @@ function run() {
       console.log(`  ✓ Installed skill: ${skill}`);
     }
 
-    // Also copy top-level manifest and README if missing
+    // Also copy top-level manifest, README, and AGENTS.md rules if missing
     ['.antigravity-install-manifest.json', 'README.md'].forEach((file) => {
       const srcFile = path.join(sourceSkillsDir, file);
       const destFile = path.join(destSkillsDir, file);
@@ -162,11 +162,26 @@ function run() {
       }
     });
 
+    const rootAgentsMd = path.join(packageRoot, 'AGENTS.md');
+    const destAgentsMd = path.join(targetProjectRoot, 'AGENTS.md');
+    if (fs.existsSync(rootAgentsMd) && (!fs.existsSync(destAgentsMd) || isForce)) {
+      fs.copyFileSync(rootAgentsMd, destAgentsMd);
+      console.log('  ✓ Installed AGENTS.md operating rules in project root');
+    }
+
     console.log('✅ [agents] Done!');
   } else {
     // Install everything
     console.log(`[agents] Installing all agents & skills into: ${targetProjectRoot}...`);
     copyFolderSync(sourceAgentsDir, destAgentsDir, { overwrite });
+
+    const rootAgentsMd = path.join(packageRoot, 'AGENTS.md');
+    const destAgentsMd = path.join(targetProjectRoot, 'AGENTS.md');
+    if (fs.existsSync(rootAgentsMd) && (!fs.existsSync(destAgentsMd) || isForce)) {
+      fs.copyFileSync(rootAgentsMd, destAgentsMd);
+      console.log('  ✓ Installed AGENTS.md operating rules in project root');
+    }
+
     console.log(`✅ [agents] Successfully synchronized .agents folder to ${targetProjectRoot}`);
   }
 }

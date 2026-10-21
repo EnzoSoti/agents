@@ -38,7 +38,8 @@ Start by looking for files that shouldn't be on GitHub:
 - IDE files: `.idea/`, `.vscode/` (ask user first), `*.iml`, `.project`  
 - Backup files: `*.bak`, `*_old.*`, `*_backup.*`, `*_copy.*`  
 - Test artifacts: `coverage/`, `.nyc_output/`, `test-results/`  
-- Personal junk: `TODO.txt`, `NOTES.txt`, `scratch.*`, `test123.*`  
+- Personal junk: `TODO.txt`, `NOTES.txt`, `scratch.*`, `test123.*`
+- Misplaced documentation: Flag any loose `.md`, `.docx`, or `.doc` files sitting in project root or `docs/` root (excluding `AGENTS.md` and `docs/README.md`). Enforce strict landing according to `AGENTS.md` taxonomy map.  
 
 **Critical - Check for secrets:**  
 - `.env` files (should never be committed)  

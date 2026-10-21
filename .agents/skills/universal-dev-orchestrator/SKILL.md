@@ -17,6 +17,7 @@ Goal: make every change **accurate, minimal, verified, and reversible**, whether
 6. **Never destroy silently.** No deleting data, force-push, dropping tables, rewriting history, or disabling tests/checks without explicit approval.
 7. **Secrets never enter code, logs, or commits.**
 8. **Ask only when blocked.** If the ambiguity is small, choose the safest reasonable default, state the assumption, and proceed. Ask only when a wrong guess is costly or irreversible.
+9. **File Landing Taxonomy.** Always consult `AGENTS.md` before creating any documentation or scripts during feature planning and delivery. Strictly land files into designated subdirectories (`docs/01-*` through `docs/07-*`, `backend-requests/`, `design-system/`, `scripts/01-*` through `scripts/04-*`). Never place loose markdown or docx files in project root or `docs/` root.
 
 > **Paths**: `scripts/`, `references/`, `roles/`, `templates/` are relative to THIS skill's folder. Run scripts from the target repo root, e.g. `bash <skill-dir>/scripts/verify.sh`.
 

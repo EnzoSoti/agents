@@ -224,3 +224,30 @@ All backend change requests are organized with dedicated specification files und
 - **BR-016**: Master Data Management CRUD API
 - **BR-017**: Database Timezone Alignment (Philippine Time PHT / UTC+8)
 - **BR-018**: Resolve Production SQL Server Connection Failure & Enable EF Core Transient Error Resiliency
+
+## 10. Mandatory Document & Markdown Landing Policy
+
+Every AI agent working in this project is explicitly instructed to **consult the directory taxonomy map first** whenever creating, generating, or updating any `.md` or `.docx`/`.doc` file.
+
+### Mandatory Landing Lookup Table
+
+| Target File Type | Mandatory Landing Directory |
+|---|---|
+| **End-User Manuals & SOP Guides (.docx)** | `docs/01-user-manuals/` |
+| **UAT Test Matrices & Acceptance Sign-Offs (.docx, .md)** | `docs/02-testing-and-uat/` |
+| **System & Module Architecture Specs (.docx)** | `docs/03-system-specifications/` |
+| **Workflow & Return/Disapproval Guides (.md)** | `docs/04-workflow-and-feature-guides/` |
+| **SharePoint & External Integration Contracts (.md)** | `docs/05-integration-and-api-specs/` |
+| **Developer Handbooks, Tokens & Screenshot Guides (.md)** | `docs/06-developer-guides/` |
+| **Release Notes & Sprint Deployment Logs (.md)** | `docs/07-sprints-and-releases/` |
+| **Formal Backend Change Requests (BR-xxx-*.md)** | `backend-requests/` |
+| **Design System Specs & Component Catalogs (.md)** | `design-system/fct-app-v4/` |
+| **Dev Server, Proxy & Middleware Scripts** | `scripts/01-dev-server/` |
+| **Automated Test Runners & E2E Validation Scripts** | `scripts/02-testing/` |
+| **Doc Builders & Word Generator Scripts** | `scripts/03-doc-generators/` |
+| **Screenshot Capture & Annotation Automation Scripts** | `scripts/04-screenshot-automation/` |
+
+### Non-Negotiable Rules Enforced on Agents:
+1. **Never Save Loose Files in Project Root**: Only `AGENTS.md` is permitted in root. No loose `.md` or `.docx` files.
+2. **Never Save Loose Files in `docs/` Root**: Only `docs/README.md` is permitted directly under `docs/`.
+3. **Mandatory Indexing**: Any newly created or renamed document must immediately be indexed and linked in `docs/README.md` or `scripts/README.md`.
