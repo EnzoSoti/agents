@@ -56,6 +56,7 @@ Usage:
 Commands:
   install, add <skill...>   Install specific skill(s) or all if none specified
   install --all             Install all available skills
+  update                    Pull latest changes and sync updated skills
   list                      List all available agent skills
   link [--cursor] [--claude] Generate IDE agent pointers (.cursorrules, CLAUDE.md)
   help                      Show this help message
@@ -123,7 +124,7 @@ function run() {
     return;
   }
 
-  const isForce = args.includes('--force') || args.includes('-f');
+  const isForce = args.includes('--force') || args.includes('-f') || command === 'update';
   const isPostinstall = process.env.npm_lifecycle_event === 'postinstall';
   // If postinstall and not force, do not overwrite modified files
   const overwrite = isForce || !isPostinstall;
