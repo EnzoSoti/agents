@@ -172,16 +172,30 @@ If you wish to allow `npm install @enzosoti/agents` without requiring the GitHub
 
 ## 6. Updating Skills & Pushing Changes
 
-When you update or add skills inside `.agents/`:
+### For Consumers / Target Projects
+To pull the latest skills and prompt updates into your project, choose any of the following:
 
 ```bash
-git add .
-git commit -m "feat: add/update agent skills"
-git push origin main
-```
-
-Projects consuming the package from GitHub can update at any time with:
-
-```bash
+# Method 1: Standard npm update (automatically runs postinstall copy)
 npm update https://github.com/EnzoSoti/agents.git
+
+# Method 2: Via npx update command
+npx https://github.com/EnzoSoti/agents.git update
+
+# Method 3: Force overwrite with latest GitHub main branch
+npx agents install --force
 ```
+
+### For Maintainers
+When you make changes or add new skills inside `.agents/`:
+
+1. Update the documentation & PDF:
+   ```bash
+   npm run docs
+   ```
+2. Commit and push:
+   ```bash
+   git add .
+   git commit -m "feat: describe updates"
+   git push origin main
+   ```

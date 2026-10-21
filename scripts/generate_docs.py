@@ -291,9 +291,19 @@ npx agents install --force"""
     story.append(Paragraph("6. Maintenance & Team Updates", h1_style))
     story.append(Paragraph(
         "To update the skills across any project consuming this package from GitHub, run:<br/>"
-        "<code>npm update https://github.com/EnzoSoti/agents.git</code><br/>"
-        "Or re-sync using npx:<br/>"
-        "<code>npx https://github.com/EnzoSoti/agents.git install --force</code>",
+        "• <b>Standard update:</b> <code>npm update https://github.com/EnzoSoti/agents.git</code><br/>"
+        "• <b>Sync via npx:</b> <code>npx https://github.com/EnzoSoti/agents.git update</code><br/>"
+        "• <b>Force fresh version:</b> <code>npx agents install --force</code>",
+        body_style
+    ))
+
+    # Section 7: Document Landing Taxonomy
+    story.append(Paragraph("7. Document Landing Taxonomy & AGENTS.md", h1_style))
+    story.append(Paragraph(
+        "Every installation automatically injects <code>AGENTS.md</code> into the target project root, "
+        "enforcing strict file-landing taxonomy for all AI agents. No loose markdown or Word files may reside "
+        "in the root or <code>docs/</code> root; all documentation must land in dedicated numerical categories "
+        "(<code>docs/01-user-manuals/</code> through <code>docs/07-sprints-and-releases/</code>, <code>backend-requests/</code>, etc.).",
         body_style
     ))
 
